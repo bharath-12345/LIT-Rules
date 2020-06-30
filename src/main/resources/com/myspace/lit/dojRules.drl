@@ -6,8 +6,8 @@ import com.myspace.lit.Event;
 rule 'New Joinee'
 when
     $emp: Employee(noDaysSinceJoining == 0)
-then
     $event: Event()
+then
     modify($event) {
         setEventId(1);
     }
