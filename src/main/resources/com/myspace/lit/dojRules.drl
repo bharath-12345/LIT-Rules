@@ -9,6 +9,6 @@ when
     $event: Event()
 then
     modify($event) {
-        setEventId(1);
+        setEventId(2);
     }
 end
