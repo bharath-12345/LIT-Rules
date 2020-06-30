@@ -7,29 +7,89 @@ package com.myspace.lit;
 @javax.persistence.Entity
 public class Employee implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(generator = "EMPLOYEE_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "EMPLOYEE_ID_GENERATOR", sequenceName = "EMPLOYEE_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(generator = "EMPLOYEE_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "EMPLOYEE_ID_GENERATOR", sequenceName = "EMPLOYEE_ID_SEQ")
+	private java.lang.Long id;
 
-    public Employee() {
-    }
-    
-    public Employee(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Employee Id ")
+	private java.lang.Integer empId;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "The job role of the employee")
+	private java.lang.String jobRole;
 
+	@org.kie.api.definition.type.Label(value = "Date of joining of the employee")
+	private java.util.Date doJ;
 
+	@org.kie.api.definition.type.Label(value = "The number of days since joining")
+	private java.lang.Integer noDaysSinceJoining;
 
+	@org.kie.api.definition.type.Label(value = "The number of months since joining")
+	private java.lang.Integer noMonthsSinceJoining;
+
+	public Employee() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.Integer getEmpId() {
+		return this.empId;
+	}
+
+	public void setEmpId(java.lang.Integer empId) {
+		this.empId = empId;
+	}
+
+	public java.lang.String getJobRole() {
+		return this.jobRole;
+	}
+
+	public void setJobRole(java.lang.String jobRole) {
+		this.jobRole = jobRole;
+	}
+
+	public java.util.Date getDoJ() {
+		return this.doJ;
+	}
+
+	public void setDoJ(java.util.Date doJ) {
+		this.doJ = doJ;
+	}
+
+	public java.lang.Integer getNoDaysSinceJoining() {
+		return this.noDaysSinceJoining;
+	}
+
+	public void setNoDaysSinceJoining(java.lang.Integer noDaysSinceJoining) {
+		this.noDaysSinceJoining = noDaysSinceJoining;
+	}
+
+	public java.lang.Integer getNoMonthsSinceJoining() {
+		return this.noMonthsSinceJoining;
+	}
+
+	public void setNoMonthsSinceJoining(java.lang.Integer noMonthsSinceJoining) {
+		this.noMonthsSinceJoining = noMonthsSinceJoining;
+	}
+
+	public Employee(java.lang.Long id, java.lang.Integer empId,
+			java.lang.String jobRole, java.util.Date doJ,
+			java.lang.Integer noDaysSinceJoining,
+			java.lang.Integer noMonthsSinceJoining) {
+		this.id = id;
+		this.empId = empId;
+		this.jobRole = jobRole;
+		this.doJ = doJ;
+		this.noDaysSinceJoining = noDaysSinceJoining;
+		this.noMonthsSinceJoining = noMonthsSinceJoining;
+	}
 
 }
