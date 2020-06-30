@@ -7,29 +7,63 @@ package com.myspace.lit;
 @javax.persistence.Entity
 public class Event implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(generator = "EVENT_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "EVENT_ID_GENERATOR", sequenceName = "EVENT_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(generator = "EVENT_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "EVENT_ID_GENERATOR", sequenceName = "EVENT_ID_SEQ")
+	private java.lang.Long id;
 
-    public Event() {
-    }
-    
-    public Event(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Id of the event")
+	private java.lang.Integer eventId;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "description of the event")
+	private java.lang.String eventDescription;
 
+	@org.kie.api.definition.type.Label(value = "time when the event occured")
+	private java.util.Date eventTimestamp;
 
+	public Event() {
+	}
 
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.Integer getEventId() {
+		return this.eventId;
+	}
+
+	public void setEventId(java.lang.Integer eventId) {
+		this.eventId = eventId;
+	}
+
+	public java.lang.String getEventDescription() {
+		return this.eventDescription;
+	}
+
+	public void setEventDescription(java.lang.String eventDescription) {
+		this.eventDescription = eventDescription;
+	}
+
+	public java.util.Date getEventTimestamp() {
+		return this.eventTimestamp;
+	}
+
+	public void setEventTimestamp(java.util.Date eventTimestamp) {
+		this.eventTimestamp = eventTimestamp;
+	}
+
+	public Event(java.lang.Long id, java.lang.Integer eventId,
+			java.lang.String eventDescription) {
+		this.id = id;
+		this.eventId = eventId;
+		this.eventDescription = eventDescription;
+		this.eventTimestamp = new java.util.Date();
+	}
 
 }
