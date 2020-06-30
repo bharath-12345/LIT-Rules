@@ -8,10 +8,9 @@ when
     $emp: Employee(noDaysSinceJoining == 0);
     $event: Event();
 then
-    modify($event) {
-        setEventId(2);
-        setEventDescription("Assign fresher course");
-    }
+    $event.setEventId(2);
+    $event.setEventDescription("Assign fresher course");
+    
 end
 
 rule '6 months refresher'
@@ -19,8 +18,7 @@ when
     $emp: Employee(noMonthsSinceJoining == 6);
     $event: Event();
 then
-    modify($event) {
-        setEventId(3);
-        setEventDescription("Assign 6 months refresher course");
-    }
+    $event.setEventId(3);
+    $event.setEventDescription("Assign 6 months refresher course");
+    
 end
