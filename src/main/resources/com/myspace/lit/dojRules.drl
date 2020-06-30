@@ -6,8 +6,9 @@ import com.myspace.lit.Employee;
 rule 'New Joinee'
 when
     $emp: Employee(noDaysSinceJoining == 0)
+    $event: Event()
 then
-    modify($emp) {
-        setJobRole("Reset jobRole");
+    modify($event) {
+        setEventId(1)
     }
 end
