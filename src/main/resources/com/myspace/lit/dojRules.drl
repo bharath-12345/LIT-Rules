@@ -1,2 +1,13 @@
 package com.myspace.lit;
 
+import com.myspace.lit.Employee;
+
+
+rule 'New Joinee'
+when
+    $emp: Employee(noDaysSinceJoining == 0)
+then
+    modify($emp) {
+        setJobRole("Reset jobRole");
+    }
+end
