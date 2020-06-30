@@ -5,8 +5,8 @@ import com.myspace.lit.Event;
 
 rule 'New Joinee'
 when
-    $emp: Employee(noDaysSinceJoining == 0)
-    $event: Event()
+    $emp: Employee(noDaysSinceJoining == 0);
+    $event: Event();
 then
     modify($event) {
         setEventId(2);
@@ -16,8 +16,8 @@ end
 
 rule '6 months refresher'
 when
-    $emp: Employee(noMonthsSinceJoining == 6)
-    $event: Event()
+    $emp: Employee(noMonthsSinceJoining == 6);
+    $event: Event();
 then
     modify($event) {
         setEventId(3);
