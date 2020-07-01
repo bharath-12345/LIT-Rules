@@ -30,5 +30,5 @@ when
     $event: Event();
 then
     $event.setEventId(4);
-    $event.setEventDescription("Assign time management course")
+    $event.setEventDescription("Assign time management course");
 end
