@@ -7,29 +7,63 @@ package com.myspace.lit;
 @javax.persistence.Entity
 public class CMRatings implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(generator = "CMRATINGS_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "CMRATINGS_ID_GENERATOR", sequenceName = "CMRATINGS_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(generator = "CMRATINGS_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "CMRATINGS_ID_GENERATOR", sequenceName = "CMRATINGS_ID_SEQ")
+	private java.lang.Long id;
 
-    public CMRatings() {
-    }
-    
-    public CMRatings(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Employee Id of the CM")
+	private java.lang.Integer empId;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "The metric on which rating was given")
+	private java.lang.String ratingMetric;
 
+	@org.kie.api.definition.type.Label(value = "The rating for a given metric")
+	private java.lang.String cmRating;
 
+	public CMRatings() {
+	}
 
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.Integer getEmpId() {
+		return this.empId;
+	}
+
+	public void setEmpId(java.lang.Integer empId) {
+		this.empId = empId;
+	}
+
+	public java.lang.String getRatingMetric() {
+		return this.ratingMetric;
+	}
+
+	public void setRatingMetric(java.lang.String ratingMetric) {
+		this.ratingMetric = ratingMetric;
+	}
+
+	public java.lang.String getCmRating() {
+		return this.cmRating;
+	}
+
+	public void setCmRating(java.lang.String cmRating) {
+		this.cmRating = cmRating;
+	}
+
+	public CMRatings(java.lang.Long id, java.lang.Integer empId,
+			java.lang.String ratingMetric, java.lang.String cmRating) {
+		this.id = id;
+		this.empId = empId;
+		this.ratingMetric = ratingMetric;
+		this.cmRating = cmRating;
+	}
 
 }
