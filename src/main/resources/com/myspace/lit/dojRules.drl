@@ -2,6 +2,7 @@ package com.myspace.lit;
 
 import com.myspace.lit.Employee;
 import com.myspace.lit.Event;
+import com.myspace.lit.CMRatings;
 
 rule 'New Joinee'
 when
@@ -21,4 +22,13 @@ then
     $event.setEventId(3);
     $event.setEventDescription("Assign 6 months refresher course");
     
+end
+
+rule 'CM Rating dips below threshold for delinquency'
+when 
+    $cm: CMRatings(cmRating < 5, ratingMetric=="NUX");
+    $event: Event();
+then
+    $event.setEventId(4);
+    $event.setEventDescription("Assign time management course")
 end
