@@ -14,14 +14,14 @@ public class CMRatings implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(name = "CMRATINGS_ID_GENERATOR", sequenceName = "CMRATINGS_ID_SEQ")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Employee Id of the CM")
+	@org.kie.api.definition.type.Label("Employee Id of the CM")
 	private java.lang.Integer empId;
 
-	@org.kie.api.definition.type.Label(value = "The metric on which rating was given")
+	@org.kie.api.definition.type.Label("The metric on which rating was given")
 	private java.lang.String ratingMetric;
 
-	@org.kie.api.definition.type.Label(value = "The rating for a given metric")
-	private java.lang.String cmRating;
+	@org.kie.api.definition.type.Label("The rating for a given metric")
+	private Integer cmRating;
 
 	public CMRatings() {
 	}
@@ -50,16 +50,16 @@ public class CMRatings implements java.io.Serializable {
 		this.ratingMetric = ratingMetric;
 	}
 
-	public java.lang.String getCmRating() {
+	public java.lang.Integer getCmRating() {
 		return this.cmRating;
 	}
 
-	public void setCmRating(java.lang.String cmRating) {
+	public void setCmRating(java.lang.Integer cmRating) {
 		this.cmRating = cmRating;
 	}
 
 	public CMRatings(java.lang.Long id, java.lang.Integer empId,
-			java.lang.String ratingMetric, java.lang.String cmRating) {
+			java.lang.String ratingMetric, java.lang.Integer cmRating) {
 		this.id = id;
 		this.empId = empId;
 		this.ratingMetric = ratingMetric;
