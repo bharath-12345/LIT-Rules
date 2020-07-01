@@ -26,7 +26,7 @@ end
 
 rule 'CM Rating dips below threshold for delinquency'
 when 
-    $cm: CMRatings(cmRating < 5, ratingMetric=="NUX");
+    $cm: CMRatings(cmRating == "5", ratingMetric=="NUX");
     $event: Event();
 then
     $event.setEventId(4);
