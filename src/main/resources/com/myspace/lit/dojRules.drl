@@ -6,7 +6,7 @@ import com.myspace.lit.CMRatings;
 
 rule 'New Joinee'
 when
-    $emp: Employee(noDaysSinceJoining == 0);
+    $emp: Employee(noDaysSinceJoining == 1);
     $event: Event();
 then
     $event.setEventId(2);
